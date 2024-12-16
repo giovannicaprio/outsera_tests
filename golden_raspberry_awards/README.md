@@ -47,8 +47,8 @@ This is a RESTful API designed to manage and provide access to data about the no
 1. Ensure you have the CSV file (gra.csv) containing the movie data in the data/ directory.
 
 2. Run the application
-```bash
-python app.py
+   ```bash
+   python app.py
 
 3. The API will be available at http://127.0.0.1:5000
 
@@ -59,41 +59,40 @@ Movies
 - GET /api/movies
 Retrieve a list of all movies.
 Response example: 
-```bash
-[
-    {
-        "distributor": "Associated Film Distribution",
-        "gra_winner": true,
-        "gra_year": 1980,
-        "id": 1,
-        "producers": [
-            "Allan Carr"
-        ],
-        "title": "Can't Stop the Music"
-    },
-    {
-        "distributor": "Lorimar Productions, United Artists",
-        "gra_winner": null,
-        "gra_year": 1980,
-        "id": 2,
-        "producers": [
-            "Jerry Weintraub"
-        ],
-        "title": "Cruising"
-    } 
-]
+   ```bash
+   [
+      {
+         "distributor": "Associated Film Distribution",
+         "gra_winner": true,
+         "gra_year": 1980,
+         "id": 1,
+         "producers": [
+               "Allan Carr"
+         ],
+         "title": "Can't Stop the Music"
+      },
+      {
+         "distributor": "Lorimar Productions, United Artists",
+         "gra_winner": null,
+         "gra_year": 1980,
+         "id": 2,
+         "producers": [
+               "Jerry Weintraub"
+         ],
+         "title": "Cruising"
+      } 
+   ]
 
-- POST /api/movies
+POST /api/movies
 Create a new movie.
-
 Request Body
-```bash
-{
-  "title": "Movie Title",
-  "distributor": "Distributor Name",
-  "gra_year": 2023,
-  "gra_winner": true
-}
+   ```bash
+   {
+   "title": "Movie Title",
+   "distributor": "Distributor Name",
+   "gra_year": 2023,
+   "gra_winner": true
+   }
 
 - PUT /api/movies/<id>
 Update an existing movie by ID.
@@ -106,7 +105,7 @@ Request Body:
   "gra_winner": false
 }
 
-- DELETE /api/movies/<id>
+DELETE /api/movies/<id>
 Delete a movie by ID.
 
 Producers
@@ -114,25 +113,25 @@ Producers
 Get the producer with the largest interval between consecutive awards and the one who received two awards the fastest.
 
 Response example:
-```bash
-{
-    "max": [
-        {
-            "followingWin": 2015,
-            "interval": 13,
-            "previousWin": 2002,
-            "producer": "Matthew Vaughn"
-        }
-    ],
-    "min": [
-        {
-            "followingWin": 1991,
-            "interval": 1,
-            "previousWin": 1990,
-            "producer": "Joel Silver"
-        }
-    ]
-}
+   ```bash
+   {
+      "max": [
+         {
+               "followingWin": 2015,
+               "interval": 13,
+               "previousWin": 2002,
+               "producer": "Matthew Vaughn"
+         }
+      ],
+      "min": [
+         {
+               "followingWin": 1991,
+               "interval": 1,
+               "previousWin": 1990,
+               "producer": "Joel Silver"
+         }
+      ]
+   }
 
 ## Testing
 To run the integration tests, use the following command:
