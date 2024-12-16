@@ -34,10 +34,12 @@ This is a RESTful API designed to manage and provide access to data about the no
    cd golden_raspberry_awards
 
 2. Create a virtual environment (optional but recommended):
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
 3. Install the required dependencies:
+   ```bash
    pip install -r requirements.txt
 
 ## Usage
@@ -45,7 +47,7 @@ This is a RESTful API designed to manage and provide access to data about the no
 1. Ensure you have the CSV file (gra.csv) containing the movie data in the data/ directory.
 
 2. Run the application
-
+```bash
 python app.py
 
 3. The API will be available at http://127.0.0.1:5000
@@ -57,7 +59,7 @@ Movies
 - GET /api/movies
 Retrieve a list of all movies.
 Response example: 
-
+```bash
 [
     {
         "distributor": "Associated Film Distribution",
@@ -85,7 +87,7 @@ Response example:
 Create a new movie.
 
 Request Body
-
+```bash
 {
   "title": "Movie Title",
   "distributor": "Distributor Name",
@@ -96,7 +98,7 @@ Request Body
 - PUT /api/movies/<id>
 Update an existing movie by ID.
 Request Body:
-
+```bash
 {
   "title": "Updated Movie Title",
   "distributor": "Updated Distributor Name",
@@ -112,7 +114,7 @@ Producers
 Get the producer with the largest interval between consecutive awards and the one who received two awards the fastest.
 
 Response example:
-
+```bash
 {
     "max": [
         {
