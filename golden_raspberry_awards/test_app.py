@@ -1,13 +1,12 @@
-# tests/test_app.py
 import unittest
 import json
-from app import app, db
-from models import Movie
+from database import db  # Import the database instance
+from app import create_app  # Import the create_app function
 
 class MovieAPITestCase(unittest.TestCase):
     def setUp(self):
         # Configura a aplicação para testes
-        self.app = app
+        self.app = create_app()  # Create an instance of the app
         self.app.config['TESTING'] = True
         self.app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'  # Usando um banco de dados em memória para testes
         self.client = self.app.test_client()
