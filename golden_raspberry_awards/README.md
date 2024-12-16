@@ -111,8 +111,8 @@ Delete a movie by ID.
 Producers
 - GET /api/producers/min_max_intervals
 Get the producer with the largest interval between consecutive awards and the one who received two awards the fastest.
-
 Response example:
+
    ```bash
    {
       "max": [
