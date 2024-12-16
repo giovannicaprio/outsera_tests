@@ -83,7 +83,7 @@ Response example:
       } 
    ]
 
-POST /api/movies
+- POST /api/movies
 Create a new movie.
 Request Body
    ```bash
@@ -97,15 +97,15 @@ Request Body
 - PUT /api/movies/<id>
 Update an existing movie by ID.
 Request Body:
-```bash
-{
-  "title": "Updated Movie Title",
-  "distributor": "Updated Distributor Name",
-  "gra_year": 2023,
-  "gra_winner": false
-}
+   ```bash
+   {
+   "title": "Updated Movie Title",
+   "distributor": "Updated Distributor Name",
+   "gra_year": 2023,
+   "gra_winner": false
+   }
 
-DELETE /api/movies/<id>
+- DELETE /api/movies/<id>
 Delete a movie by ID.
 
 Producers
