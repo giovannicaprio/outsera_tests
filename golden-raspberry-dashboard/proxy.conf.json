@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://challenge.outsera.tech",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

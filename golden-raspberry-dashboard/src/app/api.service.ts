@@ -4,9 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface Movie {
-  graYear: string;
-  winCount: number;
-  name: string;
+  year : string;
+  title: string;
+  id: string;
   // Add other properties as needed
 }
 
@@ -45,14 +45,16 @@ export interface MinMaxIntervalsResponse {
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl_winner_years = 'http://127.0.0.1:5000/api/movies/winner_years'; // Replace with your API URL
-  private apiUrl_top_distributors = 'http://127.0.0.1:5000/api/movies/top_distributors'; // Replace with your API URL
-  private apiUrlMinMaxIntervals = 'http://127.0.0.1:5000/api/producers/min_max_intervals'; // Endpoint for min-max intervals
-  private baseUrl = 'http://127.0.0.1:5000/api/movies'; // Base URL for movie-related endpoints
+  private apiUrl_winner_years = 'https://challenge.outsera.tech/api/movies?projection=years-with-multiple-winners'; // Replace with your API URL
+  private apiUrl_top_distributors = 'https://challenge.outsera.tech/api/movies?projection=studios-with-win-count'; // Replace with your API URL
+  private apiUrlMinMaxIntervals = 'https://challenge.outsera.tech/api/movies?projection=max-min-win-interval-for-producers'; // Endpoint for min-max intervals
+  //private baseUrl = 'https://challenge.outsera.tech/api/movies'; // Base URL for movie-related endpoints
+  
+  private baseUrl = '/api/movies';
   constructor(private http: HttpClient) {}
 
-  getDataSource1(): Observable<WinnerYearsResponse> {
-    console.log('Fetching getDataSource1 from API...');
+  getData_Winners_Years(): Observable<WinnerYearsResponse> {
+    console.log('Fetching apiUrl_winner_years from API...');
     return this.http.get<WinnerYearsResponse>(this.apiUrl_winner_years).pipe(
       catchError(error => {
         console.error('Error fetching data:', error);
@@ -61,7 +63,7 @@ export class ApiService {
     );
   }
 
-  getDataSource2(): Observable<StudioWinnerResponse> {
+  getData_top3_studios(): Observable<StudioWinnerResponse> {
     console.log('Fetching StudioWinnerResponse from API...');
     return this.http.get<StudioWinnerResponse>(this.apiUrl_top_distributors).pipe(
       catchError(error => {
@@ -83,7 +85,9 @@ export class ApiService {
   }
   // Method to get movies by year
   getMoviesByYear(year: number): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.baseUrl }/year/${year}`);
+    return this.http.get<Movie[]>(`${this.baseUrl}?winner=true&year=${year}`);
+    //return this.http.get<Movie[]>(`${this.baseUrl}/year/${year}`);
+    //https://challenge.outsera.tech/api/movies?winner=true&year=2018
   }
 
 
