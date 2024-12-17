@@ -1,24 +1,10 @@
 # GoldenRaspberryDashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
@@ -57,3 +43,37 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+# GoldenRaspberryDashboard
+Descrição
+O Golden Raspberry Dashboard é uma aplicação Angular que exibe informações sobre filmes, com foco em prêmios, como o Golden Raspberry. A aplicação permite que os usuários filtrem filmes com base em critérios como ano e status de vencedor.
+
+# Estrutura do Projeto
+Componentes:
+
+ListComponent: Exibe a lista de filmes.
+MenuComponent: Menu lateral para navegação.
+DashboardComponent: Painel de controle (visão geral).
+AppComponent: Componente raiz do aplicativo.
+Serviços:
+
+ApiService: Interage com a API para buscar dados sobre filmes e estúdios.
+
+## Instalação
+Clone o repositório e instale as dependências:
+```bash
+npm install
+```
+Para rodar o servidor:
+```bash
+ng serve
+```
+## Acesso
+Acesse a aplicação em http://localhost:4200.
+
+## Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+## Licença
+Este projeto está licenciado sob a MIT License.
