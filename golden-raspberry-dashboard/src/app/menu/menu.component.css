@@ -1,0 +1,36 @@
+/* menu.component.css */
+nav {
+    width: 100px; /* Largura do menu lateral */
+    height: 100vh; /* Altura total da tela */
+    background-color: #b5c2caeb; /* Cor de fundo do menu */
+    position: fixed; /* Fixa o menu à esquerda */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    padding: 20px; /* Espaçamento interno */
+    overflow-y: auto; /* Permite rolagem se o conteúdo exceder a altura */
+}
+
+ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+}
+
+li {
+    margin: 15px 0; /* Espaçamento entre os itens do menu */
+}
+
+.btn {
+    background: none; /* Remove o fundo do botão */
+    border: none; /* Remove a borda do botão */
+    color: #007bff; /* Cor do texto (link) */
+    text-align: left; /* Alinha o texto à esquerda */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Efeito de hover */
+.btn:hover {
+    color: #0056b3; /* Cor do texto ao passar o mouse */
+}

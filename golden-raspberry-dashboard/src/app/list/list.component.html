@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Movie List</h1>
+
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>
+                  Year
+                  <input type="number" [(ngModel)]="filterYear" (ngModelChange)="filterMovies()" placeholder="Enter year" />
+              </th>
+              <th>Title</th>
+              <th>
+                  Winner
+                  <select [(ngModel)]="filterWinner" (ngModelChange)="filterMovies()">
+                      <option value="">All</option>
+                      <option value="true" >True</option>
+                      <option value="false">False</option>
+                  </select>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let movie of displayedMovies">
+              <td>{{ movie.id }}</td>
+              <td>{{ movie.year }}</td>
+              <td>{{ movie.title }}</td>
+              <td>{{ movie.winner ? 'Yes' : 'No' }}</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <div *ngIf="movies.length === 0" class="no-data">
+      <p>No movies found.</p>
+  </div>
+
+  <mat-paginator *ngIf="movies.length > 0"
+                 [length]="movies.length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+</div>

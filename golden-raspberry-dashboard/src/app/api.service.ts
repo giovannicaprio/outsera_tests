@@ -4,10 +4,10 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface Movie {
-  year : string;
+  year: string;
   title: string;
   id: string;
-  // Add other properties as needed
+  winner: boolean; 
 }
 
 export interface Studio {
@@ -45,13 +45,14 @@ export interface MinMaxIntervalsResponse {
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl_winner_years = 'https://challenge.outsera.tech/api/movies?projection=years-with-multiple-winners'; // Replace with your API URL
-  private apiUrl_top_distributors = 'https://challenge.outsera.tech/api/movies?projection=studios-with-win-count'; // Replace with your API URL
-  private apiUrlMinMaxIntervals = 'https://challenge.outsera.tech/api/movies?projection=max-min-win-interval-for-producers'; // Endpoint for min-max intervals
-  //private baseUrl = 'https://challenge.outsera.tech/api/movies'; // Base URL for movie-related endpoints
-  
+  private apiUrl_winner_years = 'https://challenge.outsera.tech/api/movies?projection=years-with-multiple-winners'; 
+  private apiUrl_top_distributors = 'https://challenge.outsera.tech/api/movies?projection=studios-with-win-count'; 
+  private apiUrlMinMaxIntervals = 'https://challenge.outsera.tech/api/movies?projection=max-min-win-interval-for-producers'; // Endpoint for min-max intervals  
   private baseUrl = '/api/movies';
   constructor(private http: HttpClient) {}
+
+
+
 
   getData_Winners_Years(): Observable<WinnerYearsResponse> {
     console.log('Fetching apiUrl_winner_years from API...');
@@ -86,11 +87,20 @@ export class ApiService {
   // Method to get movies by year
   getMoviesByYear(year: number): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.baseUrl}?winner=true&year=${year}`);
-    //return this.http.get<Movie[]>(`${this.baseUrl}/year/${year}`);
-    //https://challenge.outsera.tech/api/movies?winner=true&year=2018
   }
 
+  getMovies() : Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.baseUrl}?winner=true&year=1989`);
+  }
 
+  getMoviesByYearAndWinner(): Observable<Movie[]> {
+//    return this.http.get<Movie[]>(`${this.baseUrl}?winner=${winner}&year=${year}`);
+    return this.http.get<Movie[]>(`${this.baseUrl}?winner=false&year=2018`);
+  }
 
-
+  // Método para buscar filmes com base no ano e no status de vencedor
+  getMoviesByFilters(year: number | null, winner: boolean | null): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.baseUrl}?winner=${winner}&year=${year}`);
+  }
+  
 }

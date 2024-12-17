@@ -1,0 +1,18 @@
+/* Estilo para cada tabela */
+.table-wrapper {
+  width: calc(50% - 10px); /* Ajusta a largura para 50% menos um espaço */
+  margin-bottom: 20px; /* Margem inferior para espaçamento entre as linhas */
+}
+
+/* Estilo adicional para as tabelas, se necessário */
+.mat-table {
+  width: 100%; /* Garante que a tabela ocupe toda a largura do wrapper */
+}
+
+/* Container para as tabelas */
+.table-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que as tabelas se movam para a próxima linha */
+  justify-content: space-between; /* Espaça as tabelas uniformemente */
+  margin: 20px 0; /* Margem superior e inferior */
+}
