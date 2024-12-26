@@ -24,6 +24,8 @@ export class ListComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.filterYear = 1989;
+    this.filterWinner = 'false';
     this.loadMovies(); // Carrega os filmes ao inicializar o componente
   }
 
