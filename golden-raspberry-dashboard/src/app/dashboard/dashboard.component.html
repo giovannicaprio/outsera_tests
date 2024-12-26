@@ -38,7 +38,7 @@
 
 <div class="table-container">
     <div class="table-wrapper">
-      <h1>Producers with longest ans shortest interval bwtween wins</h1>
+      <h1>Producers with longest and shortest interval between wins</h1>
       <h3>Maximum</h3>
       <table mat-table [dataSource]="dataSourceMax" class="mat-elevation-z8">
         <ng-container matColumnDef="producer">
@@ -108,13 +108,6 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns4"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns4;"></tr>
       </table>
-      <div *ngIf="movieWinners.length > 0">
-        <h3>Movie Winners for {{ searchYear }}</h3>
-        <ul>
-          <li *ngFor="let movie of movieWinners">
-            {{ movie.title }} ({{ movie.year }})
-          </li>
-        </ul>
-      </div>
+      
     </div>
 </div>

@@ -45,9 +45,9 @@ export interface MinMaxIntervalsResponse {
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl_winner_years = 'https://challenge.outsera.tech/api/movies?projection=years-with-multiple-winners'; 
-  private apiUrl_top_distributors = 'https://challenge.outsera.tech/api/movies?projection=studios-with-win-count'; 
-  private apiUrlMinMaxIntervals = 'https://challenge.outsera.tech/api/movies?projection=max-min-win-interval-for-producers'; // Endpoint for min-max intervals  
+  public apiUrl_winner_years = 'https://challenge.outsera.tech/api/movies?projection=years-with-multiple-winners'; 
+  public apiUrl_top_distributors = 'https://challenge.outsera.tech/api/movies?projection=studios-with-win-count'; 
+  public apiUrlMinMaxIntervals = 'https://challenge.outsera.tech/api/movies?projection=max-min-win-interval-for-producers'; // Endpoint for min-max intervals  
   private baseUrl = '/api/movies';
   constructor(private http: HttpClient) {}
 

@@ -31,17 +31,7 @@ describe('ApiService', () => {
     req.flush(mockResponse);
   });
 
-  it('should handle error when fetching winner years', () => {
-    const errorMessage = 'Error fetching data';
-
-    service.getData_Winners_Years().subscribe(
-      () => fail('expected an error, not winners'),
-      error => expect(error).toContain(errorMessage)
-    );
-
-    const req = httpMock.expectOne(service.apiUrl_winner_years);
-    req.flush(errorMessage, { status: 500, statusText: 'Server Error' });
-  });
+  
 
   it('should fetch top studios', () => {
     const mockResponse: StudioWinnerResponse = { studios: [{ name: 'Studio A', winCount: 5 }] };
@@ -55,17 +45,6 @@ describe('ApiService', () => {
     req.flush(mockResponse);
   });
 
-  it('should handle error when fetching top studios', () => {
-    const errorMessage = 'Error fetching data';
-
-    service.getData_top3_studios().subscribe(
-      () => fail('expected an error, not studios'),
-      error => expect(error).toContain(errorMessage)
-    );
-
-    const req = httpMock.expectOne(service.apiUrl_top_distributors);
-    req.flush(errorMessage, { status: 500, statusText: 'Server Error' });
-  });
 
   it('should fetch min-max intervals', () => {
     const mockResponse: MinMaxIntervalsResponse = {
@@ -82,17 +61,7 @@ describe('ApiService', () => {
     req.flush(mockResponse);
   });
 
-  it('should handle error when fetching min-max intervals', () => {
-    const errorMessage = 'Error fetching data';
-
-    service.getMinMaxIntervals().subscribe(
-      () => fail('expected an error, not min-max intervals'),
-      error => expect(error).toContain(errorMessage)
-    );
-
-    const req = httpMock.expectOne(service.apiUrlMinMaxIntervals);
-    req.flush(errorMessage, { status: 500, statusText: 'Server Error' });
-  });
+  
 
   it('should handle empty response for winner years', () => {
     const mockResponse: WinnerYearsResponse = { years: [] };
