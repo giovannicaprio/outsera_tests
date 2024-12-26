@@ -25,6 +25,8 @@ ng serve
 ## Acesso
 Acesse a aplicação em http://localhost:4200
 
+[Testes](./testes.png)
+
 
 ## Testes
 
@@ -33,6 +35,8 @@ Para executar testes com  [Karma](https://karma-runner.github.io) test runner, u
 ```bash
 ng test
 ```
+
+Para checar os testes basta acessar o link http://localhost:9876/debug.html
 
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.

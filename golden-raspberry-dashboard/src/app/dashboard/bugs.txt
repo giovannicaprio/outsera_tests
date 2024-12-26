@@ -1,5 +1,5 @@
 Segue abaixo:
 •⁠  ⁠O dash "List movie winners by year" está duplicado; - ok
 •⁠  ⁠Erros de digitação em vários pontos do dash; - ok
-•⁠  ⁠Lista de filmes não traz nenhum dado, apenas quando aplico os filtros;
-•⁠  ⁠Erro ao executar os testes;
+•⁠  ⁠Lista de filmes não traz nenhum dado, apenas quando aplico os filtros; ok
+•⁠  ⁠Erro ao executar os testes; ok 
